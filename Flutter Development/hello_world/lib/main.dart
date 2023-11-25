@@ -7,10 +7,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "Hello World Travel",
-        textDirection: TextDirection.ltr,
+    return MaterialApp(
+      title: "Hello World Travel Title",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Hello World Travel",
+          ),
+        ),
+        body: const Center(
+          child: Text(
+            "Hello World Travel",
+            textDirection: TextDirection.ltr,
+          ),
+        ),
       ),
     );
   }
