@@ -14,11 +14,28 @@ class MyApp extends StatelessWidget {
           title: const Text(
             "Hello World Travel",
           ),
+          backgroundColor: Colors.deepPurple,
         ),
-        body: const Center(
-          child: Text(
-            "Hello World Travel",
-            textDirection: TextDirection.ltr,
+        body: Center(
+          child: Column(
+            children: [
+              Text(
+                "Hello World Travel",
+                textDirection: TextDirection.ltr,
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue[800],
+                ),
+              ),
+              const Text(
+                "Discover the World",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.deepPurpleAccent,
+                ),
+              ),
+            ],
           ),
         ),
       ),
