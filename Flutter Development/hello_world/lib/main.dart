@@ -35,6 +35,10 @@ class MyApp extends StatelessWidget {
                   color: Colors.deepPurpleAccent,
                 ),
               ),
+              Image.network(
+                "https://images.freeimages.com/images/large-previews/eaa/the-beach-144354.jpg",
+                height: 350,
+              ),
             ],
           ),
         ),
