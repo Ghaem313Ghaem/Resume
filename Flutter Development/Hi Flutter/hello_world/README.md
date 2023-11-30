@@ -4,4 +4,4 @@ In this application ..
 
 # <span style="color:orange">**Duties:**</span>
 
-Finish reading the first chapter.
+Writing the documentation of this application.
