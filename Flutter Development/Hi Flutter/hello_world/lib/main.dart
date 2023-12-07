@@ -43,7 +43,10 @@ class WelcomePageFlutter extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 10,
+                      // For other devices it should be csutomizeed based on the devices resolutions
+                      top: (MediaQuery.of(context).size.width > 1080)
+                          ? MediaQuery.of(context).size.height / 10
+                          : MediaQuery.of(context).size.width / 10,
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -133,7 +136,7 @@ class WelcomePageFlutter extends StatelessWidget {
                     child: Image.asset(
                       "assets/illustrations/Flutter_Logo.png",
                       height: MediaQuery.of(context).size.height,
-                      fit: BoxFit.scaleDown,
+                      fit: BoxFit.contain,
                     ),
                   ),
                   Row(

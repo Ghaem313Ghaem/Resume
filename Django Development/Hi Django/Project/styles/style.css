@@ -1,7 +1,48 @@
 h1 {
-    color: red;
+    color: orange;
 }
 
 li {
     display: inline;
+}
+
+div {
+    width: 100%;
+}
+
+/* Adding a black background color to the top navigation */
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+    width: 50%;
+    /* align-items: center; */
+    padding-left: 10%;
+    padding-top: 2%;
+}
+
+/* Styling the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 3% 10%;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Changing the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Adding a color to the active/current link */
+.topnav a.active {
+    background-color: #04aa6d;
+    color: white;
+}
+
+body {
+    background-color: black;
+    margin: 0;
 }
