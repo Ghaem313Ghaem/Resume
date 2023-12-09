@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Cabin"; /* A name for the custom font */
+    src: url("../assets/fonts/Cabin-Bold.ttf"); /* The path to the font file */
+  }
+
 h1 {
     color: orange;
 }
@@ -14,9 +19,9 @@ div {
 .topnav {
     background-color: transparent;
     overflow: hidden;
-    width: 50%;
+    width: 60%;
     /* align-items: center; */
-    padding-left: 10%;
+    padding-left: 15%;
     padding-top: 2%;
 }
 
@@ -25,9 +30,10 @@ div {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 3% 10%;
+    padding: 2% 5%;
     text-decoration: none;
     font-size: 17px;
+    font-family: "Cabin";
 }
 
 /* Changing the color of links on hover */
@@ -38,11 +44,14 @@ div {
 
 /* Adding a color to the active/current link */
 .topnav a.active {
-    background-color: #04aa6d;
-    color: white;
+    background-color: transparent;
+    color: #007F5F;
 }
 
 body {
-    background-color: black;
+    background-image: url("../assets/pngs/Star_Galaxy_Pattern.png");
+    background-repeat: no-repeat;
     margin: 0;
+    background-size: 50% 50%;
+    /* background-color: red; */
 }
