@@ -10,11 +10,20 @@
   </div>
   <body
     style="
-      background-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('{% static 'svgs/Star-Galaxy-Pattern.svg' %}');
+      background-image: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 1) 100%
+        ),
+        url('{% static 'svgs/Star-Galaxy-Pattern.svg' %}');
       background-repeat: no-repeat, repeat;
-      background-size: 100% 100vh, 20%;
+      background-size: 100vw 100vh, 20%;
     "
   >
-    <h1>Hello</h1>
+    <div class="hi_django">
+      <h1>Hi</h1>
+      <h1>Django</h1>
+    </div>
   </body>
 </html>

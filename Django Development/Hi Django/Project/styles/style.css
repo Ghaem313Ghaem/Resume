@@ -5,8 +5,9 @@
     /* The path to the font file */
 }
 
-h1 {
-    color: orange;
+@font-face {
+    font-family: "RubikBubbles";
+    src: url("../assets/fonts/RubikBubbles-Regular.ttf");
 }
 
 li {
@@ -51,3 +52,14 @@ div {
     background-color: transparent;
     color: #007F5F;
 }
+
+.hi_django h1 {
+    /* font-family: "Cabin"; */
+    color: white;
+    margin-right: 10px;
+}
+
+.hi_django {
+    font-size: 500%;
+    font-family: "RubikBubbles";
+}2
