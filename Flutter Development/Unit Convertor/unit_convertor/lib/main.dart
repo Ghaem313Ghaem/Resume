@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:chewie/chewie.dart';
 
 import 'screens/main_screen.dart';
 
@@ -46,7 +45,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    Timer(const Duration(seconds: 30000), () {
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(
+        'https://github.com/MohammadHoseinAbootalebi/Flutter-Developer/assets/77608400/63cb290b-502f-4aaa-9800-560ed36ee491',
+      ),
+    );
+
+    setState(() {
+      _initializeVideoPlayerFuture = _controller.initialize();
+      _controller.setLooping(true);
+      _controller.play();
+    });
+
+    Timer(const Duration(seconds: 10), () {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
@@ -54,55 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
     });
-
-    // _controller = VideoPlayerController.networkUrl(
-    //   Uri.parse(
-    //     'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-    //   ),
-    // );
-
-    _controller = VideoPlayerController.asset("./assets/videos/Flutter.mp4")
-      ..initialize().then((_) {
-        setState(() {
-          _controller.play();
-        }); //here you could use Provider or any other state management approach. I use bloc
-      });
-
-    _initializeVideoPlayerFuture = _controller.initialize();
-    _controller.setLooping(true);
-    // _videoPlayerController =
-    //     VideoPlayerController.asset("./assets/videos/Drop_Splitting.mp4")
-    //       ..addListener(() => setState(() {}))
-    //       ..initialize().then((_) {
-    //         _videoPlayerController.setVolume(0.0);
-    //         _videoPlayerController.play();
-    //         _videoPlayerController.setLooping(true);
-    //         setState(() {});
-    //       });
-    // _videoPlayerController.initialize().then((_) {
-    //   // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-    //   setState(() {});
-    // });
-
-    // _chewieController = ChewieController(
-    //   videoPlayerController: _videoPlayerController,
-    //   aspectRatio: 15 / 6,
-    //   autoPlay: true,
-    //   looping: true,
-    //   showControls: true, // Hide the controls
-    //   // Errors can occur for example when trying to play a video
-    //   // from a non-existent URL
-    //   errorBuilder: (context, errorMessage) {
-    //     return Center(
-    //       child: Text(
-    //         errorMessage,
-    //         style: const TextStyle(color: Colors.white),
-    //       ),
-    //     );
-    //   },
-    // );
-
-    // _videoPlayerController.setLooping(true);
 
     super.initState();
   }
@@ -113,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: const Color.fromARGB(255, 255, 191, 0),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
             Image.asset(
               "./assets/images/Logo.png",
@@ -143,46 +105,38 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.black,
               ),
             ),
+            SizedBox(
+              height: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? MediaQuery.of(context).size.width * 0.1
+                  : MediaQuery.of(context).size.height * 0.08,
+            ),
             FutureBuilder(
               future: _initializeVideoPlayerFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   // If the VideoPlayerController has finished initialization, use
                   // the data it provides to limit the aspect ratio of the video.
-                  return AspectRatio(
-                    aspectRatio: _controller.value.aspectRatio,
-                    // Use the VideoPlayer widget to display the video.
-                    child: VideoPlayer(_controller),
+                  return Transform.scale(
+                    scale: 0.25,
+                    child: AspectRatio(
+                      aspectRatio: _controller.value.aspectRatio,
+                      // Use the VideoPlayer widget to display the video.
+                      child: VideoPlayer(_controller),
+                    ),
                   );
                 } else {
                   // If the VideoPlayerController is still initializing, show a
                   // loading spinner.
-                  return const Center(
-                    child: CircularProgressIndicator(),
+                  return SizedBox(
+                    height: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.width * 0.415
+                        : MediaQuery.of(context).size.height * 0.5,
                   );
                 }
               },
             ),
           ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Wrap the play or pause in a call to `setState`. This ensures the
-          // correct icon is shown.
-          setState(() {
-            // If the video is playing, pause it.
-            if (_controller.value.isPlaying) {
-              _controller.pause();
-            } else {
-              // If the video is paused, play it.
-              _controller.play();
-            }
-          });
-        },
-        // Display the correct icon depending on the state of the player.
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
         ),
       ),
     );
