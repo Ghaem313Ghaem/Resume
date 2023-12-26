@@ -269,13 +269,4 @@ Map<String, Map<String, double>> unitScales = {
     "G→O": 0.0352739619, // 6
     "G→K": 0.001, // 7
   },
-  "Data": {
-    "UKgal→USgal": 1000, // 2
-    "UKgal→L": 1000, // 3
-    "UKgal→ml": 1000, // 4
-    "UKgal→cm3": 1000, // 5
-    "UKgal→m3": 1000, // 6
-    "UKgal→in3": 1000, // 7
-    "UKgal→ft3": 1000, // 8
-  },
 };
