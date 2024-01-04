@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../assets/icons/widgets/drop_down_arrow_icons.dart';
+
 class MainCalculationScreen extends StatefulWidget {
   const MainCalculationScreen({super.key});
 
@@ -143,10 +145,15 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                           ? MediaQuery.of(context).size.width * 0.03
                           : MediaQuery.of(context).size.height * 0.03,
                     ),
+                    enabled: false, // Showing the error or hyper texts
+                    hintFadeDuration: const Duration(milliseconds: 200),
                   ),
                   isDense: true,
+                  icon: const Icon(
+                    DropDownArrow.dropdownicon,
+                  ),
                   iconSize: MediaQuery.of(context).orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.width * 0.05
+                          ? MediaQuery.of(context).size.width * 0.09
                           : MediaQuery.of(context).size.height * 0.05,
                   iconEnabledColor: const Color.fromARGB(255, 255, 191, 0),
                   itemHeight:

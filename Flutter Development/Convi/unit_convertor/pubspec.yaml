@@ -65,6 +65,7 @@ flutter:
     - assets/images/Logo.png
     - assets/videos/Drop_Splitting.mp4
     - assets/videos/Flutter.mp4
+    - assets/fonts/DropDownArrow.ttf
 
   fonts:
   - family: LilitaOne
