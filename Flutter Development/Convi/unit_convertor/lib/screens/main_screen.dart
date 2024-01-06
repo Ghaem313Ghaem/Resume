@@ -153,7 +153,7 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                     DropDownArrow.dropdownicon,
                   ),
                   iconSize: MediaQuery.of(context).orientation == Orientation.portrait
-                          ? MediaQuery.of(context).size.width * 0.09
+                          ? MediaQuery.of(context).size.width * 0.05
                           : MediaQuery.of(context).size.height * 0.05,
                   iconEnabledColor: const Color.fromARGB(255, 255, 191, 0),
                   itemHeight:

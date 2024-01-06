@@ -65,7 +65,6 @@ flutter:
     - assets/images/Logo.png
     - assets/videos/Drop_Splitting.mp4
     - assets/videos/Flutter.mp4
-    - assets/fonts/DropDownArrow.ttf
 
   fonts:
   - family: LilitaOne
@@ -74,6 +73,9 @@ flutter:
   - family: SegoeUI
     fonts:
       - asset: assets/fonts/SegoeUI.ttf
+  - family: DropDownArrow
+    fonts:
+      - asset: lib/assets/icons/fonts/DropDownArrow.ttf
 
 flutter_launcher_icons:
   android: true
