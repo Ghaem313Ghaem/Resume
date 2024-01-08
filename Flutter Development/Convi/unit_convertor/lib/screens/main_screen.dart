@@ -17,12 +17,64 @@ const List<String> mainTypeOfUnits = <String>[
   "Area",
   "Volume",
   "Mass",
-  "Temperature"
+  "Temperature",
 ];
 
-class _MainCalculationScreenState extends State<MainCalculationScreen> {
-  String currentMainTypeValue = mainTypeOfUnits.first;
+const List<String> lengthUnits = <String>[
+  "Millimeter (mm)",
+  "Centimeter (cm)",
+  "Metre (m)",
+  "Kilometre (km)",
+  "Inch (in)",
+  "Foot (ft)",
+  "Yard (yd)",
+  "Mile (mi)",
+  "Nautical mile (NM)",
+  "Mil (mil)",
+];
 
+const List<String> areaUnits = <String>[
+  "Acre (ac)",
+  "Ares (a)",
+  "Hectare (ha)",
+  "Square centimeter (cm2)",
+  "Square foot (ft2)",
+  "Square inch (in2)",
+  "Square Metre (m2)",
+];
+
+const List<String> volumeUnits = <String>[
+  "UK gallon (UKgal)",
+  "US gallon (USgal)",
+  "Litre (L)",
+  "Milliliter (ml)",
+  "Cubic centimeter (cm3)",
+  "Cubic Metre (m3)",
+  "Cubic inch (in3)",
+  "Cubic foot (ft3)",
+];
+
+const List<String> massUnits = <String>[
+  "Ton (t)",
+  "UK ton (t)",
+  "US ton (t)",
+  "Pound (Ib)",
+  "Ounce (oz)",
+  "Kilogram (kg)",
+  "Gram (g)",
+];
+
+const List<String> temperatureUnits = <String>[
+  "Celsius (C)",
+  "Fahrenheit (F)",
+  "Kelvin (K)",
+];
+
+String currentMainTypeValue = mainTypeOfUnits.first;
+String currentFromUnit = lengthUnits.first;
+String currentToUnit = lengthUnits.last;
+
+class _MainCalculationScreenState extends State<MainCalculationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -222,6 +274,24 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                         // This is called when the user selects an item.
                         setState(() {
                           currentMainTypeValue = value!;
+
+                          switch (value) {
+                            case "Length":
+                              currentFromUnit = lengthUnits.first;
+                              currentToUnit = lengthUnits.last;
+                            case "Area":
+                              currentFromUnit = areaUnits.first;
+                              currentToUnit = areaUnits.last;
+                            case "Volume":
+                              currentFromUnit = volumeUnits.first;
+                              currentToUnit = volumeUnits.last;
+                            case "Mass":
+                              currentFromUnit = massUnits.first;
+                              currentToUnit = massUnits.last;
+                            case "Temperature":
+                              currentFromUnit = temperatureUnits.first;
+                              currentToUnit = temperatureUnits.last;
+                          }
                         });
                       },
                     ),
@@ -369,7 +439,7 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                   ),
                   isExpanded: true,
                   focusColor: const Color.fromARGB(255, 255, 191, 0),
-                  value: currentMainTypeValue,
+                  value: currentFromUnit,
                   dropdownColor: Colors.white,
                   borderRadius:
                       MediaQuery.of(context).orientation == Orientation.portrait
@@ -377,17 +447,54 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                               MediaQuery.of(context).size.width * 0.07)
                           : BorderRadius.circular(
                               MediaQuery.of(context).size.width * 0.07),
-                  items: mainTypeOfUnits
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
+                  items: () {
+                    switch (currentMainTypeValue) {
+                      case "Length":
+                        return lengthUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Area":
+                        return areaUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Volume":
+                        return volumeUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Mass":
+                        return massUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Temperature":
+                        return temperatureUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                    }
+                  }(),
                   onChanged: (String? value) {
                     // This is called when the user selects an item.
                     setState(() {
-                      currentMainTypeValue = value!;
+                      currentFromUnit = value!;
                     });
                   },
                 ),
@@ -621,7 +728,7 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                   ),
                   isExpanded: true,
                   focusColor: const Color.fromARGB(255, 255, 191, 0),
-                  value: currentMainTypeValue,
+                  value: currentToUnit,
                   dropdownColor: Colors.white,
                   borderRadius:
                       MediaQuery.of(context).orientation == Orientation.portrait
@@ -629,17 +736,54 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                               MediaQuery.of(context).size.width * 0.07)
                           : BorderRadius.circular(
                               MediaQuery.of(context).size.width * 0.07),
-                  items: mainTypeOfUnits
-                      .map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
+                  items: () {
+                    switch (currentMainTypeValue) {
+                      case "Length":
+                        return lengthUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Area":
+                        return areaUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Volume":
+                        return volumeUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Mass":
+                        return massUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                      case "Temperature":
+                        return temperatureUnits
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList();
+                    }
+                  }(),
                   onChanged: (String? value) {
                     // This is called when the user selects an item.
                     setState(() {
-                      currentMainTypeValue = value!;
+                      currentToUnit = value!;
                     });
                   },
                 ),
