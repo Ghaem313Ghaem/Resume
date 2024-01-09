@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 import '../assets/icons/widgets/drop_down_arrow_icons.dart';
 
@@ -75,6 +76,14 @@ String currentFromUnit = lengthUnits.first;
 String currentToUnit = lengthUnits.last;
 
 class _MainCalculationScreenState extends State<MainCalculationScreen> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    _controller = TextEditingController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -554,6 +563,7 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                       ],
                     ),
                     child: TextField(
+                      controller: _controller,
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType
                           .number, // Set the keyboard type to number
@@ -842,6 +852,102 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
               alignment: Alignment.center,
             ),
             onPressed: () {
+              // Calculating the destination value
+              setState(() {
+                String key = ""; // The string container to contain the key
+
+                // A swtich statement to configure the key
+                // From Part
+                switch (currentMainTypeValue) {
+                  case "Length":
+                    switch (currentFromUnit) {
+                      case "Millimeter (mm)":
+                        key = "mm→";
+                      case "Centimeter (cm)":
+                        key = "cm→";
+                      case "Metre (m)":
+                        key = "m→";
+                      case "Kilometre (km)":
+                        key = "km→";
+                      case "Inch (in)":
+                        key = "in→";
+                      case "Foot (ft)":
+                        key = "ft→";
+                      case "Yard (yd)":
+                        key = "yd→";
+                      case "Mile (mi)":
+                        key = "mi→";
+                      case "Nautical mile (NM)":
+                        key = "NM→";
+                      case "Mil (mil)":
+                        key = "mil→";
+                    }
+                  case "Area":
+                    switch (currentFromUnit) {
+                      case "Acre (ac)":
+                        key = "ac→";
+                      case "Ares (a)":
+                        key = "a→";
+                      case "Hectare (ha)":
+                        key = "ha→";
+                      case "Square centimeter (cm2)":
+                        key = "cm2→";
+                      case "Square foot (ft2)":
+                        key = "ft2→";
+                      case "Square inch (in2)":
+                        key = "in2→";
+                      case "Square Metre (m2)":
+                        key = "m2→";
+                    }
+                  case "Volume":
+                    switch (currentFromUnit) {
+                      case "UK gallon (UKgal)":
+                        key = "UKgal→";
+                      case "US gallon (USgal)":
+                        key = "USgal→";
+                      case "Litre (L)":
+                        key = "L→";
+                      case "Milliliter (ml)":
+                        key = "ml→";
+                      case "Cubic centimeter (cm3)":
+                        key = "cm3→";
+                      case "Cubic Metre (m3)":
+                        key = "m3→";
+                      case "Cubic inch (in3)":
+                        key = "in3→";
+                      case "Cubic foot (ft3)":
+                        key = "ft3→";
+                    }
+                  case "Mass":
+                    switch (currentFromUnit) {
+                      case "Ton (t)":
+                        key = "Tons→";
+                      case "UK ton (t)":
+                        key = "UKTons→";
+                      case "US ton (t)":
+                        key = "USTons→";
+                      case "Pound (Ib)":
+                        key = "P→";
+                      case "Ounce (oz)":
+                        key = "O→";
+                      case "Kilogram (kg)":
+                        key = "K→";
+                      case "Gram (g)":
+                        key = "G→";
+                    }
+                  case "Temperature":
+                    switch (currentFromUnit) {
+                      case "Celsius (C)":
+                        key = "C→";
+                    }
+                }
+              });
+              final value = 0.000000025;
+              String res = NumberFormat.scientificPattern(
+                      Localizations.localeOf(context).languageCode)
+                  .format(value);
+              print("Formatted value is $res");
+
               showDialog(
                 context: context,
                 barrierColor: const Color.fromARGB(60, 0, 0, 0),
@@ -888,7 +994,7 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                       ),
                       content: Text(
                         textAlign: TextAlign.center,
-                        'The value ${4} (${"km"}) in (${"m"}) is ${4000}',
+                        'The value ${4} (${"km"}) in (${"m"}) is ${res}',
                         style: TextStyle(
                           fontFamily: "SegoeUI",
                           fontSize: MediaQuery.of(context).orientation ==
