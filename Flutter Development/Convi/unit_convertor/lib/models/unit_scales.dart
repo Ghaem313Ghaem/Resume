@@ -1,6 +1,7 @@
 Map<String, Map<String, double>> unitScales = {
   "Length": {
     // ------------ ↓ mm ↓ ------------
+    "mm→mm": 1, // 1
     "mm→cm": 0.1, // 2
     "mm→m": 0.001, // 3
     "mm→km": 0.000001, // 4
@@ -11,6 +12,7 @@ Map<String, Map<String, double>> unitScales = {
     "mm→NM": 5.39956803e-7, // 9
     "mm→mil": 39.3700787, // 10
     // ------------ ↓ cm ↓ ------------
+    "cm→cm": 1, // 1
     "cm→mm": 10, // 1
     "cm→m": 0.01, // 3
     "cm→km": 1e-5, // 4
@@ -21,6 +23,7 @@ Map<String, Map<String, double>> unitScales = {
     "cm→NM": 5.39956803e-6, // 9
     "cm→mil": 393.700787, // 10
     // ------------ ↓ m ↓ ------------
+    "m→m": 1, // 1
     "m→mm": 1000, // 1
     "m→cm": 100, // 2
     "m→km": 0.001, // 4
@@ -31,6 +34,7 @@ Map<String, Map<String, double>> unitScales = {
     "m→NM": 0.000539956803, // 9
     "m→mil": 39370.0787, // 10
     // ------------ ↓ km ↓ ------------
+    "km→km": 1, // 1
     "km→mm": 1e+6, // 1
     "km→cm": 1e+5, // 2
     "km→m": 1000, // 3
@@ -41,6 +45,7 @@ Map<String, Map<String, double>> unitScales = {
     "km→NM": 0.539956803, // 9
     "km→mil": 39370078.7, // 10
     // ------------ ↓ in ↓ ------------
+    "in→in": 1, // 1
     "in→mm": 25.4, // 1
     "in→cm": 2.54, // 2
     "in→m": 0.0254, // 3
@@ -51,6 +56,7 @@ Map<String, Map<String, double>> unitScales = {
     "in→NM": 1.37149028e-5, // 9
     "in→mil": 1000, // 10
     // ------------ ↓ ft ↓ ------------
+    "ft→ft": 1, // 1
     "ft→mm": 304.8, // 1
     "ft→cm": 30.48, // 2
     "ft→m": 0.3048, // 3
@@ -61,6 +67,7 @@ Map<String, Map<String, double>> unitScales = {
     "ft→NM": 0.000164578834, // 9
     "ft→mil": 12000, // 10
     // ------------ ↓ yd ↓ ------------
+    "yd→yd": 1, // 1
     "yd→mm": 914.4, // 1
     "yd→cm": 91.44, // 2
     "yd→m": 0.9144, // 3
@@ -71,6 +78,7 @@ Map<String, Map<String, double>> unitScales = {
     "yd→NM": 0.000493736501, // 9
     "yd→mil": 36000, // 10
     // ------------ ↓ mi ↓ ------------
+    "mi→mi": 1, // 1
     "mi→mm": 1609344, // 1
     "mi→cm": 160934.4, // 2
     "mi→m": 1609.344, // 3
@@ -81,6 +89,7 @@ Map<String, Map<String, double>> unitScales = {
     "mi→NM": 0.868976242, // 9
     "mi→mil": 63360000, // 10
     // ------------ ↓ NM ↓ ------------
+    "NM→NM": 1, // 1
     "NM→mm": 1852000, // 1
     "NM→cm": 185200, // 2
     "NM→m": 1852, // 3
@@ -91,6 +100,7 @@ Map<String, Map<String, double>> unitScales = {
     "NM→mi": 1.15077945, // 9
     "NM→mil": 72913385.8, // 10
     // ------------ ↓ mil ↓ ------------
+    "mil→mil": 1, // 1
     "mil→mm": 0.0254, // 1
     "mil→cm": 0.00254, // 2
     "mil→m": 2.54e-5, // 3
@@ -103,6 +113,7 @@ Map<String, Map<String, double>> unitScales = {
   },
   "Area": {
     // ------------ ↓ ac ↓ ------------
+    "ac→ac": 1, // 1
     "ac→a": 40.47, // 2
     "ac→ha": 0.404685642, //3
     "ac→cm2": 40468564.2, // 4
@@ -110,6 +121,7 @@ Map<String, Map<String, double>> unitScales = {
     "ac→in2": 6272640, // 6
     "ac→m2": 4046.85642, // 7
     // ------------ ↓ a ↓ ------------
+    "a→a": 1, // 1
     "a→ac": 0.0247, // 2
     "a→ha": 0.01, //3
     "a→cm2": 1000000, // 4
@@ -117,6 +129,7 @@ Map<String, Map<String, double>> unitScales = {
     "a→in2": 155000.310001, // 6
     "a→m2": 100.0, // 7
     // ------------ ↓ ha ↓ ------------
+    "ha→ha": 1, // 1
     "ha→ac": 2.4711, // 2
     "ha→a": 100, //3
     "ha→cm2": 1e+8, // 4
@@ -124,6 +137,7 @@ Map<String, Map<String, double>> unitScales = {
     "ha→in2": 15500031, // 6
     "ha→m2": 10000, // 7
     // ------------ ↓ cm^2 ↓ ------------
+    "cm2→cm2": 1, // 1
     "cm2→ac": 2.47105381e-8, // 2
     "cm2→a": 1e-6, //3
     "cm2→ha": 1e-8, // 4
@@ -131,6 +145,7 @@ Map<String, Map<String, double>> unitScales = {
     "cm2→in2": 0.15500031, // 6
     "cm2→m2": 0.0001, // 7
     // ------------ ↓ ft^2 ↓ ------------
+    "ft2→ft2": 1, // 1
     "ft2→ac": 2.29568411e-5, // 2
     "ft2→a": 0.0009290304, //3
     "ft2→ha": 9.290304e-6, // 4
@@ -138,6 +153,7 @@ Map<String, Map<String, double>> unitScales = {
     "ft2→in2": 144, // 6
     "ft2→m2": 0.09290304, // 7
     // ------------ ↓ in^2 ↓ ------------
+    "in2→in2": 1, // 1
     "in2→ac": 1.59422508e-7, // 2
     "in2→a": 6.4516e-6, //3
     "in2→ha": 6.4516e-8, // 4
@@ -145,6 +161,7 @@ Map<String, Map<String, double>> unitScales = {
     "in2→ft2": 0.0069444, // 6
     "in2→m2": 0.00064516, // 7
     // ------------ ↓ m^2 ↓ ------------
+    "m2→m2": 1, // 1
     "m2→ac": 0.000247105381, // 2
     "m2→a": 0.01, //3
     "m2→ha": 0.0001, // 4
@@ -154,6 +171,7 @@ Map<String, Map<String, double>> unitScales = {
   },
   "Volume": {
     // ------------ ↓ UK Gallons ↓ ------------
+    "UKgal→UKgal": 1, // 1
     "UKgal→USgal": 1.2, // 2
     "UKgal→L": 4.54609, // 3
     "UKgal→ml": 4546.09, // 4
@@ -162,6 +180,7 @@ Map<String, Map<String, double>> unitScales = {
     "UKgal→in3": 277.4194327916, // 7
     "UKgal→ft3": 0.1605436532, // 8
     // ------------ ↓ US Gallons ↓ ------------
+    "USgal→USgal": 1, // 1
     "USgal→UKgal": 0.8326741846, // 2
     "USgal→L": 3.785411784, // 3
     "USgal→ml": 3785.411784, // 4
@@ -170,6 +189,7 @@ Map<String, Map<String, double>> unitScales = {
     "USgal→in3": 231, // 7
     "USgal→ft3": 0.1336805556, // 8
     // ------------ ↓ Liters ↓ ------------
+    "L→L": 1, // 1
     "L→UKgal": 0.2199692483, // 2
     "L→USgal": 0.2641720524, // 3
     "L→ml": 1000, // 4
@@ -178,6 +198,7 @@ Map<String, Map<String, double>> unitScales = {
     "L→in3": 61.0237440947, // 7
     "L→ft3": 0.0353146667, // 8
     // ------------ ↓ Militers ↓ ------------
+    "mL→mL": 1, // 1
     "mL→UKgal": 0.0002199692, // 2
     "mL→USgal": 0.0002641721, // 3
     "mL→L": 0.001, // 4
@@ -186,6 +207,7 @@ Map<String, Map<String, double>> unitScales = {
     "mL→in3": 0.0610237441, // 7
     "mL→ft3": 0.0000353147, // 8
     // ------------ ↓ Cubic Centimerters ↓ ------------
+    "cm3→cm3": 1, // 1
     "cm3→UKgal": 0.0002199692, // 2
     "cm3→USgal": 0.0002641721, // 3
     "cm3→L": 0.001, // 4
@@ -194,6 +216,7 @@ Map<String, Map<String, double>> unitScales = {
     "cm3→in3": 0.0610237441, // 7
     "cm3→ft3": 0.0000353147, // 8
     // ------------ ↓ Cubic Meters ↓ ------------
+    "m3→m3": 1, // 1
     "m3→UKgal": 219.9692482991, // 2
     "m3→USgal": 264.1720523581, // 3
     "m3→L": 1000, // 4
@@ -202,6 +225,7 @@ Map<String, Map<String, double>> unitScales = {
     "m3→in3": 61023.744094732, // 7
     "m3→ft3": 35.3146667215, // 8
     // ------------ ↓ Cubic Inches ↓ ------------
+    "in3→in3": 1, // 1
     "in3→UKgal": 0.0036046501, // 2
     "in3→USgal": 0.0043290043, // 3
     "in3→L": 0.016387064, // 4
@@ -210,6 +234,7 @@ Map<String, Map<String, double>> unitScales = {
     "in3→m3": 0.0000163871, // 7
     "in3→ft3": 0.0005787037, // 8
     // ------------ ↓ Cubic Feet ↓ ------------
+    "ft3→ft3": 1, // 1
     "ft3→UKgal": 6.228835459, // 2
     "ft3→USgal": 7.4805194805, // 3
     "ft3→L": 28.316846592, // 4
@@ -220,6 +245,7 @@ Map<String, Map<String, double>> unitScales = {
   },
   "Mass": {
     // ------------ ↓ Tons ↓ ------------
+    "Tons→Tons": 1, // 1
     "Tons→UKTons": 0.9842065276, // 2
     "Tons→USTons": 0.9842065276, // 3
     "Tons→P": 2204.6226218488, // 4
@@ -227,6 +253,7 @@ Map<String, Map<String, double>> unitScales = {
     "Tons→K": 1000, // 6
     "Tons→G": 1000000, // 7
     // ------------ ↓ UK Tons ↓ ------------
+    "UKTons→UKTons": 1, // 1
     "UKTons→Tons": 1.0160469088, // 2
     "UKTons→USTons": 1.12, // 3
     "UKTons→P": 2240, // 4
@@ -234,6 +261,7 @@ Map<String, Map<String, double>> unitScales = {
     "UKTons→K": 1016.0469088, // 6
     "UKTons→G": 1016046.9088, // 7
     // ------------ ↓ US Tons ↓ ------------
+    "USTons→USTons": 1, // 1
     "USTons→Tons": 0.90718474, // 2
     "USTons→UKTons": 0.8928571429, // 3
     "USTons→P": 2000, // 4
@@ -241,6 +269,7 @@ Map<String, Map<String, double>> unitScales = {
     "USTons→K": 907.18474, // 6
     "USTons→G": 907184.74, // 7
     // ------------ ↓ Pounds ↓ ------------
+    "P→P": 1, // 1
     "P→Tons": 0.0004535924, // 2
     "P→UKTons": 0.0004464286, // 3
     "P→USTons": 0.0005, // 4
@@ -248,6 +277,7 @@ Map<String, Map<String, double>> unitScales = {
     "P→K": 0.45359237, // 6
     "P→G": 453.59237, // 7
     // ------------ ↓ Ounces ↓ ------------
+    "O→O": 1, // 1
     "O→Tons": 0.0000283495, // 2
     "O→UKTons": 0.0000279018, // 3
     "O→USTons": 0.00003125, // 4
@@ -255,6 +285,7 @@ Map<String, Map<String, double>> unitScales = {
     "O→K": 0.0283495231, // 6
     "O→G": 28.349523125, // 7
     // ------------ ↓ Kilograms ↓ ------------
+    "K→K": 1, // 1
     "K→Tons": 0.001, // 2
     "K→UKTons": 0.0009842065, // 3
     "K→USTons": 0.0011023113, // 4
@@ -262,6 +293,7 @@ Map<String, Map<String, double>> unitScales = {
     "K→O": 35.2739619496, // 6
     "K→G": 1000, // 7
     // ------------ ↓ Grams ↓ ------------
+    "G→G": 1, // 1
     "G→Tons": 0.000001, // 2
     "G→UKTons": 9.84206528e-7, // 3
     "G→USTons": 0.0000011023, // 4

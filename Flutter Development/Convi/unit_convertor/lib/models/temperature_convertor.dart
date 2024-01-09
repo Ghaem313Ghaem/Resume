@@ -3,6 +3,10 @@ double temperatureConvertor(double value, String tag) {
 
   switch (tag) {
     // -------------------- °C --------------------
+    case "C→C":
+      convertedValue = value;
+      break;
+
     case "C→F":
       convertedValue = value * (9 / 5) + 32;
       break;
@@ -12,6 +16,10 @@ double temperatureConvertor(double value, String tag) {
       break;
 
     // -------------------- °F --------------------
+    case "F→F":
+      convertedValue = value;
+      break;
+    
     case "F→C":
       convertedValue = (value - 32) * (5 / 9);
       break;
@@ -21,6 +29,10 @@ double temperatureConvertor(double value, String tag) {
       break;
 
     // -------------------- K --------------------
+    case "K→K":
+      convertedValue = value;
+      break;
+    
     case "K→C":
       convertedValue = value - 273.15;
       break;

@@ -939,8 +939,104 @@ class _MainCalculationScreenState extends State<MainCalculationScreen> {
                     switch (currentFromUnit) {
                       case "Celsius (C)":
                         key = "C→";
+                      case "Fahrenheit (F)":
+                        key = "F→";
+                      case "Kelvin (K)":
+                        key = "K→";
                     }
                 }
+
+                // The destination of the conversion
+                switch (currentMainTypeValue) {
+                  case "Length":
+                    switch (currentToUnit) {
+                      case "Millimeter (mm)":
+                        key = "${key}mm";
+                      case "Centimeter (cm)":
+                        key = "${key}cm";
+                      case "Metre (m)":
+                        key = "${key}m";
+                      case "Kilometre (km)":
+                        key = "${key}km";
+                      case "Inch (in)":
+                        key = "${key}in";
+                      case "Foot (ft)":
+                        key = "${key}ft";
+                      case "Yard (yd)":
+                        key = "${key}yd";
+                      case "Mile (mi)":
+                        key = "${key}mi";
+                      case "Nautical mile (NM)":
+                        key = "${key}NM";
+                      case "Mil (mil)":
+                        key = "${key}mil";
+                    }
+                  case "Area":
+                    switch (currentToUnit) {
+                      case "Acre (ac)":
+                        key = "${key}ac";
+                      case "Ares (a)":
+                        key = "${key}a";
+                      case "Hectare (ha)":
+                        key = "${key}ha";
+                      case "Square centimeter (cm2)":
+                        key = "${key}cm2";
+                      case "Square foot (ft2)":
+                        key = "${key}ft2";
+                      case "Square inch (in2)":
+                        key = "${key}in2";
+                      case "Square Metre (m2)":
+                        key = "${key}m2";
+                    }
+                  case "Volume":
+                    switch (currentToUnit) {
+                      case "UK gallon (UKgal)":
+                        key = "${key}UKgal";
+                      case "US gallon (USgal)":
+                        key = "${key}USgal";
+                      case "Litre (L)":
+                        key = "${key}L";
+                      case "Milliliter (ml)":
+                        key = "${key}ml";
+                      case "Cubic centimeter (cm3)":
+                        key = "${key}cm3";
+                      case "Cubic Metre (m3)":
+                        key = "${key}m3";
+                      case "Cubic inch (in3)":
+                        key = "${key}in3";
+                      case "Cubic foot (ft3)":
+                        key = "${key}ft3";
+                    }
+                  case "Mass":
+                    switch (currentToUnit) {
+                      case "Ton (t)":
+                        key = "${key}Tons";
+                      case "UK ton (t)":
+                        key = "${key}UKTons";
+                      case "US ton (t)":
+                        key = "${key}USTons";
+                      case "Pound (Ib)":
+                        key = "${key}P";
+                      case "Ounce (oz)":
+                        key = "${key}O";
+                      case "Kilogram (kg)":
+                        key = "${key}K";
+                      case "Gram (g)":
+                        key = "${key}G";
+                    }
+                  case "Temperature":
+                    switch (currentToUnit) {
+                      case "Celsius (C)":
+                        key = "${key}C";
+                      case "Fahrenheit (F)":
+                        key = "${key}F";
+                      case "Kelvin (K)":
+                        key = "${key}K";
+                    }
+                }
+
+                // Caclculations for converstions
+                // Till this part ...
               });
               final value = 0.000000025;
               String res = NumberFormat.scientificPattern(
